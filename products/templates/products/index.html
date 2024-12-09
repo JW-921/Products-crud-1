@@ -1,0 +1,15 @@
+{% extends "shared/layout.html" %}
+
+{% block "content" %}
+<h1>Products</h1>
+<a href="{% url 'products:new' %}">New Products</a>
+
+<ul>
+{% for product in products %}    
+    <li>
+        <a href="{% url 'products:show' product.id %}">{{ product.title }}</a>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "shared/layout.html" %}
+
+{% block "content" %}
+
+<h1>{{ product.title }}</h1>
+<h2>{{ product.price }}</h2>
+<article>
+    <p>{{ product.description }}</p>
+</article>
+
+<footer>
+    <a href="{% url 'products:edit' product.id %}">編輯</a>
+    |
+    <a href="{% url 'products:delete' product.id %}">刪除</a>
+</footer>
+
+{% endblock %}

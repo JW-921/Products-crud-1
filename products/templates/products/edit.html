@@ -1,0 +1,13 @@
+{% extends "shared/layout.html" %}
+
+{% block "content" %}
+<h1>Edit Products</h1>
+
+<form method="POST" action="{% url 'products:show' product.id %}">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+    <button>更新</button>
+</form>
+
+{% endblock %}
